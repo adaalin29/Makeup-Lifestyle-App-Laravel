@@ -1,0 +1,211 @@
+/**
+* Project: < ProjectName >;
+* Date: < dd MM YYYY >;
+* Author: < Firstname Lastname >;
+* Company: TouchMedia360;
+**/
+/*====================================================
+#   GENERAL STYLES                                   #
+====================================================*/
+* {
+    border: 0 none;
+    -webkit-box-sizing: border-box;  
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+html, body {
+    border: 0 none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: none;
+    color: #343434;
+    font-family: open_sansregular,Arial,Helvetica,Tahoma,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+/* asta este structura sa adaugi un font */
+@font-face {
+    font-family: 'nume_font';
+    src: url('../fonts/nume_font.extensie');
+    font-weight: normal;
+    font-style: normal;
+}
+.clearfix:after{
+    content: ".";
+    display: block; 
+    clear: both;
+    visibility: hidden;
+    line-height: 0; 
+    height: 0; 
+}
+.clearfix{
+    display: inline-block; 
+}
+* html .clearfix{
+    height: 1%; 
+}
+html[xmlns] .clearfix {
+    display: block; 
+}
+img{ 
+    border: 0;
+}
+a{
+    text-decoration: none;
+    color: #307674;
+}
+a:hover{
+    text-decoration: underline;
+}
+.transparent{
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);  
+    -khtml-opacity: 0.7;
+    -moz-opacity: 0.7;  
+    opacity: 0.7;  
+}
+button{
+    position: relative;
+    cursor: pointer;
+}
+input, select, textarea {
+    background-color: #fefefe;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    color: #2d2d2d;
+    font-size: 12px;
+    font-family: open_sansregular, Arial, Helvetica, Tahoma, Sans-Serif;
+    padding: 8px 10px;
+}
+input:focus, select:focus, textarea:focus{
+    box-shadow: 0 0 6px -4px #006f66;
+}
+textarea{
+    max-width: 100%;
+    min-height: 120px;
+}
+::-webkit-input-placeholder {
+    color: #959595;
+    font-weight: normal;
+    font-family: open_sansregular, Arial;
+    opacity: 1;
+}
+:-moz-placeholder {
+    color: #959595;
+    font-weight: normal;
+    font-family: open_sansregular, Arial;
+    opacity: 1;
+}
+::-moz-placeholder {
+    color: #959595;
+    font-weight: normal;
+    font-family: open_sansregular, Arial;
+    opacity: 1;
+}
+:-ms-input-placeholder {
+    color: #959595;
+    font-weight: normal;
+    font-family: open_sansregular, Arial;
+    opacity: 1;
+}
+/*====================================================
+#   CMS DEFAULTS                                     #
+====================================================*/
+.error {
+    width: 100%;
+}
+.red, .green {
+    border: 1px solid;
+    margin: 10px 0;
+    padding: 15px 10px 15px 36px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    overflow: hidden;
+}
+.green {
+    border: 1px solid #90B96B;
+    color: #345F0E;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAehJREFUeNpi/P//PwMlgImBQsACIhhnCAFZjEAGkANy0B8gwQ00m5kRogpEMYHl5YF4LZBXw/D3/47/Ea/xuOD7PwaGX1AMMvDvfwGGf/8nprkkGQPZLUAVHqR4gY3hH0Ofoby+6ZcvXxjinWL0Gf4wtMC9QAAwAjXXK0jIO8gLyUl9/Pzx98Fjh24AXdOA7gIPoP/PwJwGdvoPoNP/MGQIcwkGq4mrKHz5+uXf0UtH7wBdMRGodgvCgP9ATX/+tyT5JxqCaDAfIu7DwcSWJckjqfzgwQOGU5dP3f3w4cNSoJq5DL//I0Xjn38tMX4xes+ePWOK8IowAPGBmnNZ/jPVS4vLqH7985Xl5YcXDz99+rAJGIDtQAxxIcKA/zVLViy8xM7J9uvU7VPMDnaOOkAb4sVkxTV+sPxgf/fhzdOP797vZ/gLjD4Ghn8oAQRKiYx9/AxADaAwaDF2NtN6+vMZpwCnAMP7b+8Zfrz49vrj3fdHGJgZkhhYmT4wsELTC8iHWe+RAvE/ww6g02vO7jhxjfkv49fXjK8Zvn/5+uHTzXcXgSGeC1TxAWdKRDHk81+Gp5vutnCZ8Mt8v/DpDtCBeUBrnuJNyigAmEQZ3v9h+LbzTQsw+ZYwCLJcBydjXIlkwHMjQIABAIHQ3hY9qLekAAAAAElFTkSuQmCC') no-repeat scroll 10px center #C2EE9B;
+}
+.red {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAX5JREFUeNrEU71OwlAUPrVqrDFBHsARX6AJri4kJSEyEBMHggkLK8EEFsauvoPo4iN04gkgLiYOOBHUxDSUCBO0XL9z7a1t1YnBJl967/l+enIOaEII2uTZog2fbXW41zTSiSwcbaAbEDl+TJTmLsLO4x1YIOzzTscMvoRWmjtrNn9yPAPGHdFg3W6Lx1JJLFstwXfACjF4r9clN6lWJad8UUAPwhsQXqMh+vm8eK3VBN8ZT+WyrA0LBVljrfJpags9zMBnAi2eVirm82hEmUyGFosFvUwmZBgGzcfjoYYZYCbOZehLBKzwDsKQo1zOnLqu5HRdpw/XlWYM09lBTQVEW3gDdsMChLSazWhfkUEgw9nCm1n+9TuAwILAPs5mTcP36QA1Ba4xJ5LbSa4RX7FPIFSmB88bMtSduVVqjVEAE8WYuQ8jvthl9GMhxe+QZMAcwlsI93DmN9/RrsP4jVO+aAtX2IKH1tZIR2o3C+NhKJoBae46vcZ/+zd+CjAAN5vaL1x3kMMAAAAASUVORK5CYII=') no-repeat scroll 10px center #FABBBB;
+    border: 1px solid #C88383;
+    border-radius: 3px 3px 3px 3px;
+    color: #882626;
+}
+.ajax-loading:before {
+    background: url("../images/ajax-loading.gif") no-repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    height: 11px;
+    left: 10px;
+    margin: auto 0;
+    position: absolute;
+    top: 0;
+    width: 16px;
+}
+/*====================================================
+#   MAIN BLOCKS                                      #
+====================================================*/
+#page {
+    display: block;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+}
+#wrapper {
+    display: block;
+    width: 100%;
+}
+.container {
+    display: block;
+    margin: 0 auto;
+    padding: 21px 15px;
+    position: relative;
+    width: 1366px;
+}
+/*====================================================
+#   HEADER                                           #
+====================================================*/
+header#header {
+    background-color: #fdf4d8;
+    display: block;
+    height: 130px;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+}
+
+/*====================================================
+#   FOOTER                                           #
+====================================================*/
+footer#footer {
+    background-color: #aaa;
+    display: block;
+    height: 200px;
+    width: 100%;
+    z-index: 9;
+}
+/**## START HACK: Keep footer at the bottom **/
+footer#footer { bottom: 0; left: 0; position: absolute; }
+main#content { padding-bottom: 200px;  /* #footer's height */ }
+/**## END HACK: Keep footer at the bottom **/
+
+
+/*====================================================
+#   CONTENT                                          #
+====================================================*/
+main#content {
+    display: block;
+    position: relative;
+    width: 100%;
+    z-index: 8;
+}
